@@ -13,6 +13,15 @@
 			padding: 5px;
 		}
 		.transparent.header{background:none;}
+			@keyframes colorPulse 
+			{from{box-shadow:0 0 2px #333;}
+			50%{box-shadow:0 0 18px #337bb8;}
+			to{box-shadow:0 0 2px #333;}}
+			.jiujiu td{animation-duration:2s;animation-iteration-count:infinite;
+			 }
+			.jiujiu td{animation-name:colorPulse;animation-duration:2s;}
+			.jiujiu td{animation-duration:2s;animation-iteration-count:infinite;
+			}
 			@-webkit-keyframes colorPulse
 			{from{-webkit-box-shadow:0 0 2px #333;}
 			50%{-webkit-box-shadow:0 0 18px #337bb8;}
