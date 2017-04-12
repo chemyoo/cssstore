@@ -2,6 +2,7 @@
  * 定时请求器
  * @author chemyoo@foxmail.com 
  * @base Jquery插件必需引入，并要在此插件前先引入，这是一个带有定时器的插件，
+ * 可优化成只进行数据请求，使功能单一。数据处理可交由回调函数。
  */
 (function($)
 {
