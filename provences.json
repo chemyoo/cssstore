@@ -1,4 +1,5 @@
-[{"name":"北京市","code":"11","parent_code":""},
+[
+ {"name":"北京市","code":"11","parent_code":""},
  {"name":"天津市","code":"12","parent_code":""},
  {"name":"河北省","code":"13","parent_code":""},
  {"name":"山西省","code":"14","parent_code":""},
@@ -3438,4 +3439,5 @@
  {"name":"嘉模堂区","code":"820106","parent_code":"8201"},
  {"name":"圣方济各堂区","code":"820107","parent_code":"8201"},
  {"name":"路氹城","code":"820108","parent_code":"8201"},
- {"name":"澳门新城","code":"820109","parent_code":"8201"}]
+ {"name":"澳门新城","code":"820109","parent_code":"8201"}
+]
