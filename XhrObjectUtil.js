@@ -75,7 +75,7 @@ var XhrUtil = {
 		
 		var sendData = this.serializeData(data);
 		
-		if(defaults.method.toLowerCase() == 'get'){
+		if(defaults.method.toLowerCase() == 'get' && sendData !== ''){
 			url += "?" + sendData;
 		}
 		
@@ -85,14 +85,18 @@ var XhrUtil = {
 		}
 		
 		xhr.onreadystatechange = function(){
-			if(xhr.readyState == 4 && xhr.status == 200) {
-				var text = null;
-				if(defaults.type.toLowerCase() == 'json'){
-					text = JSON.parse(xhr.responseText.trim());
+			if(xhr.readyState == 4) {
+				if(xhr.status == 200){
+					 var text = null;
+					if(defaults.type.toLowerCase() == 'json'){
+						text = JSON.parse(xhr.responseText.trim());
+					} else {
+						text = xhr.responseText.trim();
+					}
+					callback(text);
 				} else {
-					text = xhr.responseText.trim();
+					console.error(xhr.responseText || '请求失败或网络错误，请稍后再试...');
 				}
-				callback(text);
 			}
 		};
 		
