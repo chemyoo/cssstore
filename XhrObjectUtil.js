@@ -54,7 +54,6 @@ var XhrUtil = {
 			if(typeof arguments[arguments.length - 2] == 'boolean'){
 				async = arguments[arguments.length - 2];
 				arguments[arguments.length - 2] = null;
-				break;
 			}
 		} 
 		if(!callback && typeof callback != 'function') {
