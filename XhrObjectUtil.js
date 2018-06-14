@@ -61,10 +61,10 @@ var XhrUtil = {
 		}
 		
 		var defaults = {method:'get',type:'json',async:true};
-		if(method && method instanceof String && '' !== method.trim()){
+		if(method && typeof method == 'string' && '' !== method.trim()){
 			defaults.method = method;
 		} 
-		if(type && type instanceof String && '' !== type.trim()){
+		if(type && typeof type == 'string' && '' !== type.trim()){
 			defaults.type = type;
 		}
 		if(typeof async == 'boolean'){
@@ -108,8 +108,8 @@ var XhrUtil = {
 	},
 	serializeData : function(data) {
 		var dataStr = "";
-		if(data instanceof String ) {
-			dataStr += data;
+		if(typeof data == 'string') {
+			dataStr += data + ".";
 		} else if(data instanceof Object && !this.isEmptyObject(data)){
 			for(var key in data){
 				dataStr += key + "=" + data[key] + "&"; 
@@ -126,4 +126,3 @@ var XhrUtil = {
 	}	
 	 
 }
-
